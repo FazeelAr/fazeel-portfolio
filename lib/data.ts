@@ -80,7 +80,7 @@ export const experienceItems = [
   },
 ];
 
-export const projectItems = [
+export const projectItems: Project[] = [
   {
     category: "AI / LLM",
     year: "2025",
@@ -170,6 +170,22 @@ export const projectItems = [
     links: { live: "https://ibmcoverseasconsultants.com" },
   },
 ];
+
+export type Project = {
+  category: string;
+  year: string;
+  title: string;
+  description: string;
+  highlights: string[];
+  stack: string[];
+  links: {
+    live?: string;
+    github?: string;
+  };
+};
+
+// Explicitly type `projectItems` so consumers know `links.github` may exist.
+export const projectItemsTyped: Project[] = projectItems;
 
 export const skillGroups = [
   { category: "AI & LLM", skills: ["LangChain", "LangGraph", "RAG Systems", "ChromaDB", "Gemini API", "Prompt Engineering", "Multi-Agent Workflows", "Sentence Transformers"] },
